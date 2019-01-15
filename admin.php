@@ -25,17 +25,7 @@ if (isset($_POST['flag'])) {
 }
 
 ?>
-<!--
-TO DO:
- - la submit formular sa verifice emailul si parola in tabelul utilizatori
- - daca informatiile sunt bune:
-    - salvezi in $_SESSION id-ul utilizatorului logat, numele lui si o variabila booleana numita logat (true)
-    - redirect catre dashboard
- - daca informatiile nu sunt bune mesaj de eroare pe pagina de admin
- - in header.php sa verifici mereu daca $_SESSION['logat'] este adevarat, ma lasi pe pagina, iar daca nu ma trimiti pe pagina de login
- - in meniu sa am un link catre o pagina de logout care imi sterge tot ce se afla in $_SESSION si ma redirectioneaza catre admin.php
- -->
-<!---->
+
 <?php require_once ('header.php'); ?>
             <div class="row">
                 <div class="col-md-4 offset-md-4">
