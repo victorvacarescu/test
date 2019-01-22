@@ -1,6 +1,7 @@
 <?php
 //session_start();
-include_once ('helper.php');
+require_once ('helper.php');
+require_once ('validare_formular.php');
 //var_dump($_SESSION);
 
 arataErori();
@@ -63,7 +64,51 @@ while ($row = mysqli_fetch_assoc($result)){
     $arrayBlog[] = $row;
 }
 
-// CONTACT
+//contact
+
+
+$salveaza = false;
+
+$campuriValidare = array(
+
+    "name" => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "subject" => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "email"  => array("regula"=>"is_email", "valoare"=>"", "mesaj"=>""),
+    "message"  => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "select"  => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "radio"  => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+
+);
+
+if (isset($_POST['flag'])){
+
+    $raspunsValidare = valideaza_formular($campuriValidare);
+    $campuriValidare = $raspunsValidare['inputs'];
+
+    if ($raspunsValidare['formularReusit']){
+
+        $name       = mysqli_real_escape_string($db, $_POST['name']);
+        $subject    = mysqli_real_escape_string($db, $_POST['subject']);
+        $email      = mysqli_real_escape_string($db, $_POST['email']);
+        $message    = mysqli_real_escape_string($db, $_POST['message']);
+        $select     = mysqli_real_escape_string($db, $_POST['select']);
+        $radio      = mysqli_real_escape_string($db, $_POST['radio']);
+        $data       = date("Y-m-d H:i:s");
+
+        $db = conectareLaBazaDeDate();
+
+        $sql_statement = "INSERT INTO contact (Nume, Email, Subiect, Mesaj, DataInregistrare, Selection, Radio) VALUES ('" . $name . "','" . $email . "','" . $subject . "','" . $message . "','" . $date . "','".$select."','".$radio."')";        mysqli_query($db, $sql_statement);
+
+        $salveaza = true;
+
+        $scroleaza_jos = false;
+    } else {
+        $scroleaza_jos = true;
+    }
+
+}
+
+/*// CONTACT
 $name_error = $email_error = $subject_error =  $message_error ="";
 $name = $email = $subject = $message = $date ="";
 $valid = true;
@@ -116,9 +161,9 @@ if ($valid){
     mysqli_query($db, $sql_statement);
     $_SESSION['arataMesaj'] = "arat";
     //header('Location: http://menut.ro/index.php');
-}
+}*/
 
-$ip = showIpAdress();
+//$ip = showIpAdress();
 
 ?>
 
@@ -363,39 +408,66 @@ $ip = showIpAdress();
         <h3 class="mb-5 mt-5">Get in Touch</h3>
         <div class="row">
           <div class="col-md-8 col-lg-12">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <form action="" method="POST" id="form">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <div class="md-form">
-                            <input type="text" id="name" name="name" class="form-control border-0" placeholder="Name" value="<?= $name;?>">
-                            <span class="text-danger font-weight-light"><?= "<h6>{$name_error}</h6>"; ?></span>
+                            <input type="text" id="name" name="name" class="form-control border-0" placeholder="Name" value="<?=arataValoare('name',$campuriValidare)?>"/>
+<!--                            <span class="text-danger font-weight-light"></span>-->
+                            <?=arataEroareFormular("name",$campuriValidare)?>
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="md-form">
-                            <input type="text" id="email" name="email" class="form-control border-0" placeholder="Email" value="<?= $email;?>">
-                            <span class="text-danger font-weight-light"><?= "<h6>{$email_error}</h6>"; ?></span>
+                            <input type="text" id="email" name="email" class="form-control border-0" placeholder="Email" value="<?=arataValoare('email',$campuriValidare)?>"/>
+<!--                            <span class="text-danger font-weight-light">--><?///*= "<h6>{$email_error}</h6>"; */?><!--</span>-->
+                            <?=arataEroareFormular("email",$campuriValidare)?>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <div class="md-form">
-                            <input type="text" id="subject" name="subject" class="form-control border-0" placeholder="Subject" value="<?= $subject;?>">
-                            <span class="text-danger font-weight-light"><?= "<h6>{$subject_error}</h6>"; ?></span>
+                            <input type="text" id="subject" name="subject" class="form-control border-0" placeholder="Subject" value="<?=arataValoare('subject',$campuriValidare)?>"/>
+<!--                            <span class="text-danger font-weight-light">--><?///*= "<h6>{$subject_error}</h6>"; */?><!--</span>-->
+                            <?=arataEroareFormular("subject",$campuriValidare)?>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea border-0" placeholder="Message"><?= $message;?></textarea>
-                            <span class="text-danger font-weight-light"><?= "<h6>{$message_error}</h6>"; ?></span>
+                            <textarea type="text" id="message" name="message" rows="4" class="form-control md-textarea border-0" placeholder="Message"><?=arataValoare('message',$campuriValidare)?></textarea>
+<!--                            <span class="text-danger font-weight-light">--><?///*= "<h6>{$message_error}</h6>"; */?><!--</span>-->
+                            <?=arataEroareFormular("message",$campuriValidare)?>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>SURVEY</strong>
+                    </div>
+                    <br />
+                    <div class="col-md-6">
+                        Age:
+                        <select name="select">
+                            <option value=""  <?=arataValoareSelect('select',"")?> >Select</option>
+                            <option value="1" <?=arataValoareSelect('select',"1")?>>20-30 years</option>
+                            <option value="2" <?=arataValoareSelect('select',"2")?> >31-40 years</option>
+                            <option value="3" <?=arataValoareSelect('select',"3")?>>41-50 years</option>
+                        </select>
+                        <?=arataEroareFormular("select",$campuriValidare)?>
+                    </div>
+                    <div class=" col-md-6">
+                        Graduate:
+                        <input type="radio" name="radio" value="Y" <?= arataValoareRadio('radio','Y') ?> />Yes
+                        <input type="radio" name="radio" value="N" <?= arataValoareRadio('radio','N') ?>/>No
+                        <?=arataEroareFormular("radio",$campuriValidare)?>
+                    </div>
+                </div>
+                <br />
                 <div class="container text-center mb-5">
-                    <input type="hidden" name="flag" value="set">
+                    <input type="hidden" name="flag" value="set" />
                     <button type="submit" class="btn btn-danger border-light p-2 pl-3 pr-3">Send Message</button>
                 </div>
             </form>
@@ -439,6 +511,11 @@ $ip = showIpAdress();
       <?php unset($_SESSION['arataMesaj']);
             } ?>
 
+    <? if ($scroleaza_jos) {?>
+        $('html, body').animate({
+            scrollTop: $("#form").offset().top
+        }, 400);
+    <?php } ?>
 
   </script>
 </html>

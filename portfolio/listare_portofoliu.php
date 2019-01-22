@@ -5,7 +5,29 @@ arataErori();
 
 $db = conectareLaBazaDeDate();
 
-$elementePortofoliu = getTabel($db, 'portofoliu');
+$sql_statement = "SELECT
+                    p.*,
+                    cp.Categorie as NumeCategorie
+                  FROM
+                    portofoliu as p,
+                    categorie_portofoliu as cp
+                  WHERE
+                    p.IdCategoriePortofoliu = cp.Id";
+
+$result         = mysqli_query($db, $sql_statement);
+$elementePortofoliu = array();
+
+while ($row = mysqli_fetch_assoc($result)){
+    $elementePortofoliu[] = $row;
+}
+
+
+//foreach($elementePortofoliu as $k=>$e){
+//    $categoriePortofoliu = getTableWhere($db,'categorie_portofoliu', $e['IdCategoriePortofoliu']);
+//    $elementePortofoliu[$k]['NumeCategorie'] = $categoriePortofoliu['Categorie'];
+//}
+
+
 
 ?>
 
@@ -22,11 +44,13 @@ $elementePortofoliu = getTabel($db, 'portofoliu');
                 <table class="table table-striped">
                     <tr>
                         <td><strong>Nume</strong></td>
+                        <td><strong>Categorie</strong></td>
                         <td><strong>Actiuni</strong></td>
                     </tr>
                     <?php foreach ($elementePortofoliu as $element){ ?>
                         <tr>
                             <td><?php echo $element['Nume']?></td>
+                            <td><?php echo $element['NumeCategorie']?></td>
                             <td>
                                 <a class="btn btn-primary" href="http://www.menut.ro/portfolio/modificare_portofoliu.php?idPortofoliu=<?php echo $element['Id']?>">Modifica</a>
                                 <button class="btn btn-danger" onclick="stergePortofoliu('<?php echo $element['Id']?>')">Sterge</button>

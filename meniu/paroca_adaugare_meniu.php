@@ -1,19 +1,39 @@
 <?php
 
 require_once ('../helper.php');
+
+require_once ('../validare_formular.php');
+
 verificaDacaEsteLogat();
-$salveaza = false;
+
 arataErori();
 
+$salveaza = false;
+
+$campuriValidare = array(
+
+    "nume" => array("regula"=>"required", "valoare"=>"", "mesaj"=>"")
+
+);
+
 if (isset($_POST['flag'])){
-$nume       =   $_POST['nume'];
-$data       =   date("Y-m-d H:i:s");
 
-$db = conectareLaBazaDeDate();
-$sql_statement = "INSERT INTO meniu (Nume, DataInregistrare) VALUES ('".$nume."','".$data."')";
-mysqli_query($db, $sql_statement);
+    $raspunsValidare = valideaza_formular($campuriValidare);
+    $campuriValidare = $raspunsValidare['inputs'];
 
-$salveaza = true;
+    if ($raspunsValidare['formularReusit']) {
+
+        $nume = mysqli_real_escape_string($db, $_POST['nume']);
+        $data = date("Y-m-d H:i:s");
+
+        $db = conectareLaBazaDeDate();
+
+        $sql_statement = "INSERT INTO meniu (Nume, DataInregistrare) VALUES ('" . $nume . "','" . $data . "')";
+        mysqli_query($db, $sql_statement);
+
+        $salveaza = true;
+
+    }
 }
 ?>
 
@@ -29,7 +49,8 @@ $salveaza = true;
                     <form action="" method="POST">
                         <div class="form-group">
                             <label>Nume Meniu</label>
-                            <input type="text" name="nume" class="form-control"/>
+                            <input type="text" name="nume" class="form-control" value="<?=arataValoare('nume',$campuriValidare)?>"/>
+                            <?=arataEroareFormular("nume",$campuriValidare)?>
                         </div>
                         <input type="hidden" name="flag" value="set"/>
                         <input type="submit" class="btn btn-success" value="Salveaza"/>

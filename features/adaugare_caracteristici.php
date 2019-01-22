@@ -1,23 +1,43 @@
 <?php
+
 require_once ('../helper.php');
+
+require_once ('../validare_formular.php');
+
 verificaDacaEsteLogat();
-$salveaza = false;
 
 arataErori();
 
-if (isset($_POST['flag']))
-{
-    $sigla      =   $_POST['sigla'];
-    $titlu      =   $_POST['titlu'];
-    $text       =   $_POST['text'];
-    $data       =   date("Y-m-d H:i:s");
+$salveaza = false;
 
-    $db = conectareLaBazaDeDate();
+$campuriValidare = array(
 
-    $sql_statement = "INSERT INTO caracteristici (Sigla, Titlu, Text, DataInregistrare) VALUES ('".$sigla."','".$titlu."','".$text."','".$data."')";
-    mysqli_query($db, $sql_statement);
+    "sigla" => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "titlu" => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
+    "text"  => array("regula"=>"required", "valoare"=>"", "mesaj"=>""),
 
-    $salveaza = true;
+);
+
+if (isset($_POST['flag'])){
+
+    $raspunsValidare = valideaza_formular($campuriValidare);
+    $campuriValidare = $raspunsValidare['inputs'];
+
+    if ($raspunsValidare['formularReusit']){
+
+        $sigla  = mysqli_real_escape_string($db, $_POST['sigla']);
+        $titlu  = mysqli_real_escape_string($db, $_POST['titlu']);
+        $text   = mysqli_real_escape_string($db, $_POST['text']);
+        $data   = date("Y-m-d H:i:s");
+
+        $db = conectareLaBazaDeDate();
+
+        $sql_statement = "INSERT INTO caracteristici (Sigla, Titlu, Text, DataInregistrare) VALUES ('" . $sigla . "','" . $titlu . "','" . $text . "','" . $data . "')";
+        mysqli_query($db, $sql_statement);
+
+        $salveaza = true;
+    }
+
 }
 
 ?>
@@ -34,15 +54,19 @@ if (isset($_POST['flag']))
                     <form action="" method="POST">
                         <div class="form-group">
                             <label>Sigla</label>
-                            <input type="text" class="form-control" name="sigla"/>
+                            <input type="text" class="form-control" name="sigla" value="<?=arataValoare('sigla',$campuriValidare)?>"/>
+                            <?=arataEroareFormular("sigla",$campuriValidare)?>
                         </div>
                         <div class="form-group">
                             <label>Titlu</label>
-                            <input type="text" class="form-control" name="titlu"/>
+                            <input type="text" class="form-control" name="titlu" value="<?=arataValoare('titlu',$campuriValidare)?>"/>
+                            <?=arataEroareFormular("titlu",$campuriValidare)?>
                         </div>
                         <div class="form-group">
                             <label>Text</label>
-                            <textarea name="text" rows="4" class="form-control"></textarea>
+                            <textarea name="text" rows="4" class="form-control"><?=arataValoare('text',$campuriValidare)?>
+                            </textarea>
+                            <?=arataEroareFormular("text",$campuriValidare)?>
                         </div>
                         <input type="hidden" name="flag" value="set"/>
                         <input type="submit" value="Salveaza" class="btn btn-success"/>
@@ -51,7 +75,7 @@ if (isset($_POST['flag']))
             </div>
             <script>
                 <?php if($salveaza){?>
-                alert('Rubrica Caracteristici adaugata cu succes!');
+                alert ('Rubrica Caracteristici adaugata cu succes!');
                 <?php } ?>
             </script>
-       <?php require_once ('../footer.php');?>
+<?php require_once ('../footer.php');?>

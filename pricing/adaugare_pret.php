@@ -1,22 +1,36 @@
 <?php
 
 require_once ('../helper.php');
+require_once ('../validare_formular.php');
 verificaDacaEsteLogat();
 arataErori();
 $salveaza = false;
 
+$campuriValidare = array(
+
+    "titlu"=> array("regula"=>"required"   ,"valoare"=>"","mesaj"=>""),
+    "pret" => array("regula"=>"required"   ,"valoare"=>"","mesaj"=>""),
+    "text" => array("regula"=>""           ,"valoare"=>"","mesaj"=>""),
+);
+
 if (isset($_POST['flag'])){
-$titlu      =   $_POST['titlu'];
-$pret       =   $_POST['pret'];
-$data       =   date("Y-m-d H:i:s");
 
-$db = conectareLaBazaDeDate();
+    $raspunsValidare = valideaza_formular($campuriValidare);
+    $campuriValidare = $raspunsValidare['inputs'];
 
-$sql_statement = "INSERT INTO preturi (Titlu, Pret, DataInregistrare) VALUES ('".$titlu."','".$pret."','".$data."')";
+    if($raspunsValidare['formularReusit']){
+        $titlu      =   $_POST['titlu'];
+        $pret       =   $_POST['pret'];
+        $data       =   date("Y-m-d H:i:s");
 
-mysqli_query($db, $sql_statement);
+        $db = conectareLaBazaDeDate();
 
-$salveaza = true;
+        $sql_statement = "INSERT INTO preturi (Titlu, Pret, DataInregistrare) VALUES ('".$titlu."','".$pret."','".$data."')";
+
+        mysqli_query($db, $sql_statement);
+
+        $salveaza = true;
+    }
 }
 
 ?>
@@ -33,15 +47,19 @@ $salveaza = true;
                     <form action="" method="POST">
                         <div class="form-group">
                             <label>Titlu</label>
-                            <input class="form-control" type="text" name="titlu"/>
+                            <input class="form-control" type="text" name="titlu" value="<?=arataValoare('titlu',$campuriValidare)?>"/>
+                            <?=arataEroareFormular("titlu",$campuriValidare)?>
                         </div>
                         <div class="form-group">
                             <label>Pret</label>
-                            <input class="form-control" type="text" name="pret"/>
+                            <input class="form-control" type="text" name="pret" value="<?=arataValoare('pret',$campuriValidare)?>"/>
+                            <?=arataEroareFormular("pret",$campuriValidare)?>
                         </div>
                         <div class="form-group">
                             <label>Text</label>
-                            <textarea name="text" rows="5" class="form-control"></textarea>
+                            <textarea name="text" rows="5" class="form-control"><?=arataValoare('text',$campuriValidare)?>
+                            </textarea>
+                            <?=arataEroareFormular("text",$campuriValidare)?>
                         </div>
                         <input type="hidden" name="flag" value="set">
                         <input class="btn btn-success" type="submit" value="Salveaza"/>

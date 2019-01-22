@@ -3,7 +3,7 @@
 require_once ('../helper.php');
 verificaDacaEsteLogat();
 arataErori();
-echo $_SESSION['idUser'];
+
 $db = conectareLaBazaDeDate();
 $intrariBlog = getTabel($db, 'blog');
 
@@ -15,7 +15,7 @@ $intrariBlog = getTabel($db, 'blog');
                     <h1>Listare Blog</h1>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a class="btn btn-success" href="http://menut.ro/blog/adaugare_blog.php">Adaugare Blog</a>
+                    <a class="btn btn-success" href="http://www.menut.ro/blog/adaugare_blog.php">Adaugare Blog</a>
                 </div>
                 <?php if (!empty($intrariBlog)){ ?>
                 <div class="col-md-12">
