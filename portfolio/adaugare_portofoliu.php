@@ -111,3 +111,5 @@ $intrariCategoriePortofoliu = getTabel($db, 'categorie_portofoliu');
     <?php } ?>
 </script>
  <?php require_once ('../footer.php');
+
+ 

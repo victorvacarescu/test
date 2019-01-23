@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88bb1667-3a5d-445a-a6cf-8991975989c9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/categorie_portofoliu/adaugare_categorie_portofoliu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/categorie_portofoliu/listare_categorie_portofoliu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/categorie_portofoliu/modificare_categorie_portofoliu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/categorie_portofoliu/stergere_categorie_portofoliu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/adaugare_blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/adaugare_blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/listare_blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/listare_blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/adaugare_caracteristici.php" beforeDir="false" afterPath="$PROJECT_DIR$/features/adaugare_caracteristici.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meniu/paroca_adaugare_meniu.php" beforeDir="false" afterPath="$PROJECT_DIR$/meniu/paroca_adaugare_meniu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio/adaugare_portofoliu.php" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/adaugare_portofoliu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/listare_portofoliu.php" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/listare_portofoliu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/modificare_portofoliu.php" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/modificare_portofoliu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pricing/adaugare_pret.php" beforeDir="false" afterPath="$PROJECT_DIR$/pricing/adaugare_pret.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/adaugare_servicii.php" beforeDir="false" afterPath="$PROJECT_DIR$/services/adaugare_servicii.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/adaugare_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/users/adaugare_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validare_formular.php" beforeDir="false" afterPath="$PROJECT_DIR$/validare_formular.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,17 +17,26 @@
       <file leaf-file-name="adaugare_portofoliu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio/adaugare_portofoliu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+            <state relative-caret-position="482">
+              <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listare_portofoliu.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adaugare_categorie_portofoliu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/categorie_portofoliu/adaugare_categorie_portofoliu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listare_portofoliu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portfolio/listare_portofoliu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="258">
+              <caret line="55" column="127" selection-start-line="55" selection-start-column="121" selection-end-line="55" selection-end-column="127" />
             </state>
           </provider>
         </entry>
@@ -57,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="530" column="66" lean-forward="true" selection-start-line="530" selection-start-column="66" selection-end-line="530" selection-end-column="66" />
+            <state relative-caret-position="462">
+              <caret line="546" column="90" selection-start-line="546" selection-start-column="90" selection-end-line="546" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -69,7 +62,7 @@
       <file leaf-file-name="validare_formular.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validare_formular.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
+            <state relative-caret-position="275">
               <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
             </state>
           </provider>
@@ -78,8 +71,8 @@
       <file leaf-file-name="helper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+            <state relative-caret-position="-578">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -163,7 +156,6 @@
         <option value="$PROJECT_DIR$/features/adaugare_caracteristici.php" />
         <option value="$PROJECT_DIR$/users/adaugare_user.php" />
         <option value="$PROJECT_DIR$/validare_formular.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/portfolio/modificare_portofoliu.php" />
         <option value="$PROJECT_DIR$/categorie_portofoliu/listare_categorie_portofoliu" />
         <option value="$PROJECT_DIR$/categorie_portofoliu/modificare_categorie_portofoliu.php" />
@@ -172,8 +164,9 @@
         <option value="$PROJECT_DIR$/categorie_portofoliu/stergere_categorie_portofoliu.php" />
         <option value="$PROJECT_DIR$/categorie_portofoliu/listare_categorie_portofoliu.php" />
         <option value="$PROJECT_DIR$/pricing/adaugare_pret.php" />
-        <option value="$PROJECT_DIR$/portfolio/adaugare_portofoliu.php" />
         <option value="$PROJECT_DIR$/portfolio/listare_portofoliu.php" />
+        <option value="$PROJECT_DIR$/portfolio/adaugare_portofoliu.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -187,7 +180,7 @@
     <packageJsonPaths />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="123" />
     <option name="y" value="61" />
     <option name="width" value="1151" />
@@ -208,6 +201,11 @@
             <path>
               <item name="paroca" type="b2602c69:ProjectViewProjectNode" />
               <item name="paroca" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="paroca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="paroca" type="462c0819:PsiDirectoryNode" />
+              <item name="categorie_portofoliu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,16 +272,15 @@
       <workItem from="1546128107350" duration="13023000" />
       <workItem from="1547040056137" duration="47361000" />
       <workItem from="1547941248350" duration="4336000" />
-      <workItem from="1548097712022" duration="27497000" />
+      <workItem from="1548097712022" duration="32903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="520111000" />
+    <option name="totallyTimeSpent" value="525517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" weight="0.3290938" />
@@ -292,7 +289,7 @@
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.3290938" />
       <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49920508" visible="true" weight="0.18374817" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49920508" visible="true" weight="0.18374817" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3290938" />
@@ -588,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/categorie_portofoliu/adaugare_categorie_portofoliu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/categorie_portofoliu/stergere_categorie_portofoliu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -630,10 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/validare_formular.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="530" column="66" lean-forward="true" selection-start-line="530" selection-start-column="66" selection-end-line="530" selection-end-column="66" />
+        <state relative-caret-position="275">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -644,31 +634,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validare_formular.php">
+    <entry file="file://$PROJECT_DIR$/categorie_portofoliu/adaugare_categorie_portofoliu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/adaugare_portofoliu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+        <state relative-caret-position="-45">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/helper.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-578">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio/adaugare_portofoliu.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <caret line="114" column="1" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/listare_portofoliu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="258">
+          <caret line="55" column="127" selection-start-line="55" selection-start-column="121" selection-end-line="55" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="546" column="90" selection-start-line="546" selection-start-column="90" selection-end-line="546" selection-end-column="90" />
         </state>
       </provider>
     </entry>

@@ -529,3 +529,23 @@ ok 2. in index php foreach pt nume foto si reglare col-md folosind chunk.
 <!--intrebari:
 
 <!--adaugare_portofoliu -> Nume Portfoliu -> input -> value = ?-->
+
+<?php
+
+/*
+ * creat baza de date blog
+ * creat tabel "utilizatori" (Id,Nume,Prenume, Email, Parola)
+ * creat tabel "articole" (Id, Titlu, Continut,Imagine, Data, IdUtilizator)
+ * creat tabel "comentarii" (Id, Titlu, Continut, Data, Nume, IdArticol)
+ *
+ * creat subdomeniu blog.menut.ro
+ * creat pagina index (meniu in partea de sus, coloana de 2/3 listare articole, 1/3 coloana care contine ultimele 5 articole adaugate)
+ * creat pagina creare cont utilizator ( nume, prenume, email, parola, confirmare parola)
+ * creat pagina login utilizator
+ * dupa ce ma loghez (sesiune) sa imi apara in meniu link catre adaugare articol
+ * pagina adaugare articol (titlu, continut, upload imagine)
+ * pagina detalii articol (ajung pe ea cand dau click pe index.php pe un titlu sau imagine)
+ *
+ */
+
+?>
